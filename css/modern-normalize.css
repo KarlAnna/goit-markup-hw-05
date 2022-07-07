@@ -26,6 +26,9 @@ ul, ol {
 
 a {
     display: inline-block;
+}
+
+a:not(.menu-nav-link-current) {
     text-decoration: none;
 }
 

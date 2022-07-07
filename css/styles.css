@@ -75,6 +75,10 @@ nav {
     margin: 0 25px;
 }
 
+.menu-nav-link-current::after {
+    text-decoration: currentColor;
+}
+
 .header-address-link {
     color: var(--text-color);
 
