@@ -85,7 +85,9 @@ nav {
     display: block;
     width: 100%;
     height: 4px;
+    border-radius: 2px;
     background-color: currentColor;
+    bottom: -35px;
 }
 
 .header-address-link {
@@ -402,8 +404,9 @@ footer {
     padding: 60px 0;
 }
 
-.footer-list {
+.footer {
     display: flex;
+    align-items: baseline;
     gap: 70px;
 }
 
@@ -564,7 +567,6 @@ footer {
 }
 
 .projects-list-item {
-    position: relative;
     border: 1px solid #eeeeee;
     width: 365px;
     height: 404px;
