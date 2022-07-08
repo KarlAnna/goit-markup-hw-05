@@ -41,7 +41,7 @@
         <section  class="section, cap">
             <div class="container">
                 <h1 class="cap-title">Эффективные решения для вашего бизнеса</h1>
-                <button class="cap-button" type="button" data-modal-open data-modal-close data-modal><span class="cap-button-text">Заказать услугу</span></button>
+                <button class="cap-btn" type="button" data-modal-open><span class="cap-btn-text">Заказать услугу</span></button>
             </div>
         </section>
         <section class="section">
@@ -372,6 +372,16 @@
             </ul>
         </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="modal-close-btn" type="button" data-modal-close>
+                <svg class="modal-close-icon">
+                    <use href="./images/icons.svg#close" width="11"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
     <script src="./modal.js"></script>
 </body>
 </html>

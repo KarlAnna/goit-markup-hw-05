@@ -73,28 +73,36 @@ nav {
     line-height: 1.15;
     letter-spacing: 0.02em;
     margin: 0 25px;
+
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-nav-link-current::after {
-    text-decoration: currentColor;
+    content: '';
+    position: absolute;
+
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: currentColor;
 }
 
 .header-address-link {
     color: var(--text-color);
-
     font-weight: 500;
     font-size: 14px;
     line-height: 1.15;
     letter-spacing: 0.02em;
-
     margin: auto 25px auto 0;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-nav-link-current, .menu-nav-link:hover, .menu-nav-link:focus, 
 .header-address-link:hover, .header-address-link:focus, 
 .footer-address-link-mail:hover, .footer-address-link-mail:focus, .footer-address-link-tel:hover, .footer-address-link-tel:focus {
     color: var(--accent-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address-icon {
@@ -143,21 +151,22 @@ hr {
     margin-bottom: 30px;
 }
 
-.cap-button {
+.cap-btn {
     background-color: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 
     display: block;
     margin: 0 auto;
-}
 
-.cap-button:hover {
-    background-color: var(--button-hover);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cap-button-text {
+.cap-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.cap-btn-text {
     color: white;
 
     font-weight: 700;
@@ -344,16 +353,17 @@ hr {
 }
 
 .our-team-link {
+    fill: var(--icon-color);
     width: 44px;
     height: 44px;
-    fill: var(--icon-color);
     border-radius: 50%;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-team-link:hover, .our-team-link:focus {
     background-color: var(--accent-color);
     fill: white;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -374,12 +384,13 @@ hr {
     height: 92px;
     display: flex;
     justify-content: center;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover, .clients-link:focus {
     fill: var(--accent-color);
     border-color: var(--accent-color);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /** FOOTER **/
@@ -415,10 +426,11 @@ footer {
 
 .footer-address-link-mail, .footer-address-link-tel {
     color: rgba(255, 255, 255, 0.6);
-
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-address-link-mail {
@@ -447,12 +459,68 @@ footer {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-link:hover, .footer-icon-link:focus {
     fill: white;
     background-color: var(--accent-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/** MODAL **/
+
+.backdrop {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 581px;
+    background-color: white;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon {
+    width: 11px;
+    height: 11px;
+}
+
+.modal-close-btn:hover {
+    background-color: var(--accent-color);
+    border-color: black;
+    fill: white;
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 
@@ -464,7 +532,7 @@ footer {
     margin: 0 0 50px 280px;
 }
 
-.filters-list-button {
+.filters-list-btn {
     background-color: var(--bg-color-whitish);
     border-radius: 4px;
     border-color: rgba(255, 255, 255, 0);
@@ -479,13 +547,14 @@ footer {
 
     padding: 6px 22px;
     margin-right: 6px;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.filters-list-button:active, .filters-list-button:hover, .filters-list-button:focus {
+.filters-list-btn:active, .filters-list-btn:hover, .filters-list-btn:focus {
     color: white;
     background-color: var(--accent-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects-list {
@@ -495,16 +564,39 @@ footer {
 }
 
 .projects-list-item {
+    position: relative;
     border: 1px solid #eeeeee;
-
     width: 365px;
     height: 404px;
     margin: 0 30px 30px 0;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
 }
 
 .projects-list-item:hover {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-list-item-text {
+    position: absolute;
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ .projects-list-item:hover .projects-list-item-text {
+    transform: translateY(0%);
 }
 
 .projects-list-item:nth-child(3n) {
@@ -515,7 +607,7 @@ footer {
     margin-bottom: 0;
 }
 
-.projects-list-item-text {
+.projects-list-item-info {
     padding: 20px 0 20px 24px;
 }
 
